@@ -10,7 +10,7 @@ resource "azurerm_resource_group" "res-group" {
 
 resource "azurerm_virtual_network" "vnet" {
     name                = "${var.identifier}-network"
-    address_space       = ["10.0.0.0/16"]
+    address_space       = [var.cidr_block]
     location            = var.location
     resource_group_name = azurerm_resource_group.res-group.name
 
