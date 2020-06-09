@@ -5,3 +5,7 @@ variable "location" {
 variable "identifier" {
     description = "Unique identifier to avoid name collisions"
 }
+
+variable "cidr_block" {
+    description = "CIDR block"
+}
