@@ -1,11 +1,8 @@
 resource "azurerm_resource_group" "res-group" {
-        name = "${var.identifier}-resources"
-        location = var.location
+    name = "${var.identifier}-resources"
+    location = var.location
 
-        tags = {
-            environment = "Dev"
-            Key = "DoNotDelete"
-        }
+    tags = var.tags
 }
 
 resource "azurerm_virtual_network" "vnet" {
@@ -14,10 +11,7 @@ resource "azurerm_virtual_network" "vnet" {
     location            = var.location
     resource_group_name = azurerm_resource_group.res-group.name
 
-    tags = {
-        environment = "Dev"
-        Key = "DoNotDelete"
-    }
+    tags = var.tags
 }
 
 resource "azurerm_subnet" "public-subnet" {

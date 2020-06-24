@@ -10,3 +10,7 @@ variable "cidr_block" {
     description = "CIDR block"
     default = "10.0.0.0/16"
 }
+
+variable "tags" {
+    type = map(string)
+}
